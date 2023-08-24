@@ -1,4 +1,5 @@
-from langchain import PrompTemplate
+from langchain.document_loaders import PyPDFLoader, DirectoryLoader
+from langchain import PromptTemplate
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.llms import CTransformers
@@ -70,7 +71,7 @@ def final_result(query):
 @cl.on_chat_start
 async def start():
     chain = qa_bot()
-    msg = cl.Message(content="Starting the bot...")
+    msg = cl.Message(content="Starting Llama2 now...")
     await msg.send()
     msg.content = "Hi, I am Llama2. Ask Me Anything!"
     await msg.update()
