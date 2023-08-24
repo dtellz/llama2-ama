@@ -72,7 +72,7 @@ async def start():
     chain = qa_bot()
     msg = cl.Message(content="Starting Llama2 now...")
     await msg.send()
-    msg.content = "Hi, I am Llama2. Ask Me Anything!"
+    msg.content = "Hi, I am Llama2 (🦙🦙) running on your CPU 🤯. Ask Me Anything! 🤓"
     await msg.update()
 
     cl.user_session.set("chain", chain)
