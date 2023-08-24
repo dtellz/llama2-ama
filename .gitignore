@@ -1,2 +1,4 @@
 model/
 vectorstores/
+.chainlit/
+__pycache__/
