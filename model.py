@@ -86,6 +86,7 @@ async def main(message):
     cb.answer_reached = True
     res = await chain.acall(message, callbacks=[cb])
     answer = res["result"]
+    # Check where did the model find the answer
     sources = res["source_documents"]
 
     if sources:
