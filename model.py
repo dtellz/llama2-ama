@@ -12,7 +12,7 @@ DB_FAISS_PATH = "vectorstores/db_faiss"
 custom_prompt_template = """Use the following pieces of information to answer the user's question.
 If you don't know the answer, just say "I don't know the answer to your question", don't try to make up an answer.
 
-Context: {}
+Context: {context}
 Question: {question}
 
 Only return the helpful answer below and nothing else.
@@ -21,11 +21,10 @@ Helpful answer:
 
 def set_custom_prompt():
     """
-    Prompt template for QA retrieval for each vector stores
+    Prompt template for QA retrieval for each vectorstore
     """
-
-    prompt = PrompTemplate(template=custom_prompt_template, input_variables=['context', 'question'])
-
+    prompt = PromptTemplate(template=custom_prompt_template,
+                            input_variables=['context', 'question'])
     return prompt
 
 #Retrieval QA Chain
@@ -43,7 +42,7 @@ def retrieval_qa_chain(llm, prompt, db):
 def load_llm():
     # Load the locally downloaded model here
     llm = CTransformers(
-        model = "llama-2-7b-chat.ggmlv3.q8_0.bin",
+        model = "./model/llama-2-7b-chat.ggmlv3.q8_0.bin",
         model_type="llama",
         max_new_tokens = 512,
         temperature = 0.5
