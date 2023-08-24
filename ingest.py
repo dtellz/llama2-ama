@@ -8,7 +8,7 @@ DB_FAISS_PATH = "vectorstores/db_faiss"
 
 # create vector database
 def create_vector_db():
-    loader = DirectoryLoader(DATA_PATH, glob='*.pdf', loader_class=PyPDFLoader)
+    loader = DirectoryLoader(DATA_PATH, glob='*.pdf', loader_cls=PyPDFLoader)
     documents = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     texts = text_splitter.split_documents(documents)
