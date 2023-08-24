@@ -1,7 +1,7 @@
 # Llama2 "AMA"
 ## What is this?
 
-This is a basic web app to create chatbots that can be fed with your desired knowledge source to answer questions.
+This is a basic chainlit web app to run Llama2 in CPU machines. Its knowledge is constraint to the pdf file you store in the data folder. It is a simple way to get started with Llama2.
 
 ## How to use it?
 
@@ -24,3 +24,13 @@ This is a basic web app to create chatbots that can be fed with your desired kno
     ```
 
     This will create a directory called vectorstores in the root folder. This is where the knowledge source is stored in a vectorized format.
+
+5. Run the following command to start the web app:
+
+    ```bash
+    chainlit run model.py -w  
+    ```
+
+    This will start the web app on port 8000. You can access it at http://localhost:8000
+
+6. Ask questions and enjoy!
