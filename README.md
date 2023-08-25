@@ -1,7 +1,7 @@
 # Llama2 "AMA"
 ## What is this?
 
-This is a basic chainlit web app to run Llama2 in CPU machines. Its knowledge is constraint to the pdf file you store in the data folder. It is a simple way to get started with Llama2. For this example I used "Cracking the coding interview" book.
+This is a basic chainlit web app to run Llama2 in CPU machines. Its knowledge is constrained to the pdf file you store in the data folder. It is a simple way to get started with Llama2.
 
 ## How to use it?
 
